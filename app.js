@@ -14,7 +14,7 @@ const empresas = [
     { id: "lety", representante: "LETICIA ZARATE RIVERA", nombre: "BLOQUE DE AGRUPACIONES DE RENOVACION, S.A. DE C.V." },
     { id: "santos", representante: "JOSE SANTOS REYES GASPAR", nombre: "AUTOTRANSPORTISTAS Y CONCESIONARIOS DEL ESTADO DE MEXICO RUTA 82 ANDEN \"U\" CUATRO CAMINOS Y RAMALES, S.A. DE C.V." },
     { id: "mario", representante: "MARIO RIZO LOPEZ", nombre: "TRANSPORTES TERRESTRES CON ENLACE AL DISTRITO FEDERAL, S.A. DE C.V." },
-    { id: "mt", representante: "JORGE ENRIQUEZ GONZALEZ", nombre: "LINEA MEXICO TACUBA HUIXQUILUCAN Y ANEXAS, S.A. DE C.V." },
+    { id: "don jorge", representante: "JORGE ENRIQUEZ GONZALEZ", nombre: "LINEA MEXICO TACUBA HUIXQUILUCAN Y ANEXAS, S.A. DE C.V." },
     { id: "cureno", representante: "JAIME ALFREDO CUREÑO MUÑOZ", nombre: "RADIO TAXI SAN ISIDRO, S.A. DE C.V." },
     { id: "adolfo", representante: "JOSE ALFREDO RAMIREZ ZUÑIGA", nombre: "TRANSPORTISTAS COLECTIVOS ADOLFO LOPEZ MATEOS, HUIXQUILUCAN TOREO, S.A. DE C.V." },
     { id: "martin", representante: "MARTIN GUTIERREZ MILLA", nombre: "AUTOTRANSPORTES MIR DE SAN ANTONIO TULTITLAN, S.A. DE C.V." },
@@ -102,6 +102,7 @@ function mostrarEmpresas() {
         <table class="table table-striped">
             <thead>
                 <tr>
+                    <th>ID</th>
                     <th>Nombre del Representante</th>
                     <th>Empresa</th>
                     <th>Seleccionar</th>
@@ -113,6 +114,7 @@ function mostrarEmpresas() {
     empresas.forEach(empresa => {
         contenido += `
             <tr>
+                <td>${(empresa.id).toUpperCase()}</td>
                 <td>${empresa.representante}</td>
                 <td>${empresa.nombre}</td>
                 <td>
