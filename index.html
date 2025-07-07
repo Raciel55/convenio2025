@@ -91,7 +91,18 @@
         <button class="btn btn-primary" id="sig-fis">Siguiente</button>
     </section>
     <section id="sec-moral" style="display: none;">
-        <h1 class="h1 mt-5">Selecciona la empresa correspondiente</h1>
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <h1 class="h1 mt-5">Selecciona la empresa correspondiente</h1>
+                </div>
+                <div class="col mt-5">
+                    <form id="formBusqueda">
+                        <input type="text" id="buscadorEmpresas" class="form-control me-2" placeholder="Buscar...">
+                    </form>
+                </div>
+            </div>
+        </div>
         <div class="table table-responsive" id="empresas"></div>
     </section>
     <section id="sec-datos" style="display: none;">
@@ -183,6 +194,10 @@
                         <option value="Chevy">
                         <option value="Gol">
                     </datalist>
+                </div>
+                <div class="mb-3">
+                    <label for="firmaInput" class="form-label">¿Firma Digital?</label>
+                    <input class="form-control" type="file" id="firmaInput" accept="image/*">
                 </div>
                 <br>
                 <div class="text-center">
@@ -281,7 +296,10 @@
             </p>
             <div class="text-center">
                 <p class="signature">
-                    Atentamente <br><br><br>
+                    Atentamente <br>
+                    <div class="mt-3 d-flex justify-content-center" >
+                        <img id="firmaDigital" src="" alt="Firma Digital" style="max-width: 300px; max-height: 100px;">
+                    </div>
                     _______________________________________ <br>
                     <b><span class="field" id="ing-titular-3"></span></b> <br>
                     <br><br>

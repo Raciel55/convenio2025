@@ -10,7 +10,7 @@ const empresas = [
     { id: "excelencia", representante: "LUIS SALGADO URBAN", nombre: "EXCELENCIA EN EL TRANSPORTE DE ALQUILER DEL ESTADO DE MEXICO, S.A. DE C.V." },
     { id: "quiroz-36", representante: "ROBERTO QUIROZ DIAZ", nombre: "TRANSPORTES CHALCO 36, S.A. DE C.V." },
     { id: "izcalli", representante: "JULIO CESAR MOYA LUNA", nombre: "SITIO DE TAXIS Y RADIO TAXIS DE IZCALLI DEL RIO, S.A. DE C.V." },
-    { id: "vm", representante: "ISRAEL GONZALEZ ROSAS", nombre: "AUTOBUSES DEL VALLE DE MEXICO, S.A. DE C.V." },
+    { id: "isra", representante: "ISRAEL GONZALEZ ROSAS", nombre: "AUTOBUSES DEL VALLE DE MEXICO, S.A. DE C.V." },
     { id: "lety", representante: "LETICIA ZARATE RIVERA", nombre: "BLOQUE DE AGRUPACIONES DE RENOVACION, S.A. DE C.V." },
     { id: "santos", representante: "JOSE SANTOS REYES GASPAR", nombre: "AUTOTRANSPORTISTAS Y CONCESIONARIOS DEL ESTADO DE MEXICO RUTA 82 ANDEN \"U\" CUATRO CAMINOS Y RAMALES, S.A. DE C.V." },
     { id: "mario", representante: "MARIO RIZO LOPEZ", nombre: "TRANSPORTES TERRESTRES CON ENLACE AL DISTRITO FEDERAL, S.A. DE C.V." },
@@ -27,6 +27,27 @@ const empresas = [
     { id: "ray", representante: "RAYMUNDO DAVID BENITEZ CRUZ", nombre: "TRANSPORTES EN NEZAHUALCOYOTL PERLA-REFORMA, S.A. DE C.V." },
     { id: "elba", representante: "MANUEL RICARDO RODRIGUEZ MORALES", nombre: "TRANSPORTES DE ALQUILER DE MEXICO Y ANEXOS DE CUAUTITLAN, S.A. DE C.V." }
 ];
+
+// ✅ Registrar una sola vez el evento de carga de firma
+const firmaInput = document.getElementById('firmaInput'); // input tipo file
+const firmaDigital = document.getElementById('firmaDigital'); // <img>
+
+if (firmaInput && firmaDigital) {
+    firmaInput.addEventListener('change', function () {
+        const file = this.files[0];
+        if (file && file.type.startsWith('image/')) {
+            const reader = new FileReader();
+            reader.onload = function (e) {
+                firmaDigital.src = e.target.result;
+                firmaDigital.style.display = 'block';
+            };
+            reader.readAsDataURL(file);
+        } else {
+            firmaDigital.src = '#';
+            firmaDigital.style.display = 'none';
+        }
+    });
+}
 
 document.addEventListener('DOMContentLoaded', function () {
     document.getElementById('moral').addEventListener('click', function () {
@@ -95,7 +116,6 @@ function ocultarSecciones() {
 };
 function mostrarEmpresas() {
     document.getElementById('sec-moral').style.display = 'block';
-
     const empresasDiv = document.getElementById('empresas');
 
     let contenido = `
@@ -108,7 +128,7 @@ function mostrarEmpresas() {
                     <th>Seleccionar</th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody id="tablaEmpresas">
     `;
 
     empresas.forEach(empresa => {
@@ -127,9 +147,27 @@ function mostrarEmpresas() {
     });
 
     contenido += `</tbody></table>`;
-    empresasDiv.innerHTML = contenido;
+    empresasDiv.innerHTML = contenido; // ← tabla se inserta aquí
 
-    // 👉 Agrega event listeners a todos los botones con clase "seleccionar-btn"
+    const input = document.getElementById('buscadorEmpresas');
+    const tabla = document.getElementById('tablaEmpresas');
+    const filas = tabla.getElementsByTagName('tr');
+
+    input.addEventListener('keyup', function () {
+        const filtro = input.value.toLowerCase();
+
+        for (let i = 0; i < filas.length; i++) {
+            const celdas = filas[i].getElementsByTagName('td');
+            let textoFila = '';
+
+            for (let j = 0; j < celdas.length - 1; j++) {
+                textoFila += celdas[j].textContent.toLowerCase() + ' ';
+            }
+
+            filas[i].style.display = textoFila.includes(filtro) ? '' : 'none';
+        }
+    });
+
     const botones = document.querySelectorAll('.seleccionar-btn');
     botones.forEach(boton => {
         boton.addEventListener('click', function () {
@@ -143,7 +181,6 @@ function mostrarEmpresas() {
 
             console.log("Empresa seleccionada:", empresaSeleccionada);
 
-            // ⚠️ Elimina primero listeners anteriores si existen (por si el usuario regresa)
             const btnTerminar = document.getElementById('terminar');
             const nuevoBtn = btnTerminar.cloneNode(true);
             btnTerminar.parentNode.replaceChild(nuevoBtn, btnTerminar);
