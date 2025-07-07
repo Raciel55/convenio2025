@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Convenio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css.css" />
+</head>
+
+<body>
+
+    <!-- Menú de navegación -->
+    <section id="sec-navegacion">
+        <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">CONVENIO</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" id="ir-inicio">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="ir-fisica">Fisica</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="ir-moral">Moral</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="ir-ingresar-datos">Ingresar Datos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="ir-convenio">Imprimir Convenio</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </section>
+    <section id="sec-inicio">
+        <br>
+        <div>
+            <h1>Selecciona el tipo de persona</h1>
+        </div>
+        <div class="container mt-5 mb-5">
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="person-card" style="background-image: url('./img/fisica.png');">
+                        <button class="person-overlay" id="fisica">
+                        </button>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="person-card" style="background-image: url('./img/moral.png');">
+                        <button class="person-overlay" id="moral">
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="row g-4 mt-3    ">
+                <div class="col-md-6 text-center">
+                    <h3>Fisica</h3>
+                </div>
+                <div class="col-md-6 text-center">
+                    <h3>Moral</h3>
+                </div>
+            </div>
+            <br><br>
+        </div>
+    </section>
+    <section id="sec-fisica" style="display: none;">
+        <h1>Ingresa el nombre de titular</h1>
+        <div class="form-group">
+            <label for="nombres">Nombres</label>
+            <input type="text" class="form-control" id="nombres" placeholder="Ingresa el nombre del titular">
+        </div>
+        <div class="form-group">
+            <label for="apellido-paterno">Apellido Paterno</label>
+            <input type="text" class="form-control" id="apellido-paterno"
+                placeholder="Ingresa el apellido paterno del titular">
+        </div>
+        <div class="form-group">
+            <label for="apellido-materno">Apellido Materno</label>
+            <input type="text" class="form-control" id="apellido-materno"
+                placeholder="Ingresa el apellido materno del titular">
+        </div>
+        <button class="btn btn-primary" id="sig-fis">Siguiente</button>
+    </section>
+    <section id="sec-moral" style="display: none;">
+        <h1 class="h1 mt-5">Selecciona la empresa correspondiente</h1>
+        <div class="table table-responsive" id="empresas"></div>
+    </section>
+    <section id="sec-datos" style="display: none;">
+        <h1 class="h1 mt-5">Ingresa los datos</h1>
+        <div id="resultadoVIN"></div>
+        <div class="container mt-5 mb-5">
+            <form>
+                <div class="form-group">
+                    <label for="concesion">Número de Concesión</label>
+                    <input type="text" class="form-control" id="concesion" placeholder="Ingresa la concesión">
+                </div>
+                <label for="municipio" class="form-label">Municipio</label>
+                <input class="form-control" list="municipiosEdomex" id="municipio" name="municipio"
+                    placeholder="Escribe o selecciona un municipio">
+                <datalist id="municipiosEdomex">
+                    <option value="Ecatepec de Morelos">
+                    <option value="Nezahualcóyotl">
+                    <option value="Naucalpan de Juárez">
+                    <option value="Toluca">
+                    <option value="Tlalnepantla de Baz">
+                    <option value="Chimalhuacán">
+                    <option value="Ixtapaluca">
+                    <option value="Atizapán de Zaragoza">
+                    <option value="Cuautitlán Izcalli">
+                    <option value="Valle de Chalco Solidaridad">
+                    <option value="Tecámac">
+                    <option value="Texcoco">
+                    <option value="Coacalco de Berriozábal">
+                    <option value="La Paz">
+                    <option value="Zumpango">
+                    <option value="Huehuetoca">
+                    <option value="Tultepec">
+                    <option value="Huixquilucan">
+                    <option value="Chalco">
+                    <option value="Cuautitlán">
+                    <option value="Hueypoxtla">
+
+                </datalist>
+                <div class="form-group">
+                    <label for="serie">Serie</label>
+                    <input type="text" class="form-control" id="serie" placeholder="Ingresa la serie de vehiculo">
+                </div>
+                <label for="marcaAuto" class="form-label">Marca del coche</label>
+                <input class="form-control" list="marcasAuto" id="marcaAuto" name="marcaAuto"
+                    placeholder="Escribe o selecciona una marca">
+                <datalist id="marcasAuto">
+                    <option value="Nissan">
+                    <option value="Chevrolet">
+                    <option value="Volkswagen">
+                    <option value="Toyota">
+                    <option value="Ford">
+                    <option value="Honda">
+                    <option value="Mazda">
+                    <option value="Kia">
+                    <option value="Hyundai">
+                    <option value="Renault">
+                    <option value="Jeep">
+                    <option value="BMW">
+                    <option value="Mercedes-Benz">
+                    <option value="SEAT">
+                    <option value="Peugeot">
+                    <option value="Dodge">
+                    <option value="Suzuki">
+                    <option value="Chrysler">
+                    <option value="Mitsubishi">
+                    <option value="Audi">
+                </datalist>
+                <div class="mb-3">
+                    <label for="submarcaTaxi" class="form-label">Submarca</label>
+                    <input class="form-control" list="submarcasTaxi" id="submarcaTaxi" name="submarcaTaxi"
+                        placeholder="Escribe o selecciona una submarca">
+                    <datalist id="submarcasTaxi">
+                        <option value="Tsuru">
+                        <option value="Versa">
+                        <option value="Aveo">
+                        <option value="March">
+                        <option value="Jetta Clásico">
+                        <option value="Vento">
+                        <option value="Pointer">
+                        <option value="Sonic">
+                        <option value="Atos">
+                        <option value="i10">
+                        <option value="Tiida">
+                        <option value="Spark">
+                        <option value="Matiz">
+                        <option value="Sentra">
+                        <option value="Fiesta">
+                        <option value="Ikon">
+                        <option value="Chevy">
+                        <option value="Gol">
+                    </datalist>
+                </div>
+                <br>
+                <div class="text-center">
+                    <button class="btn btn-primary" id="terminar">Terminar Convenio</button>
+                </div>
+            </form>
+        </div>
+    </section>
+    <section id="sec-convenio" style="display: none;">
+        <section id="sec-imprimir">
+            <div class="container">
+                <button class="btn btn-primary mt-3" id="imprimir"> <img src="./img/imprimir.png" style="width: 50px;"
+                        alt="" srcset="">
+                </button>
+            </div>
+        </section>
+        <div class="container" style="width: 1000px; text-align: justify;">
+            <br>
+            <br>
+            <p class="center" style="text-align: right;">Tlalnepantla de Baz, Estado de México, a <span
+                    id="ing-fecha"></span>.</p>
+
+            <div class="text-right" style="text-align: right;">
+                <h4 class="h4">Prórroga de Vo. Bo</h2>
+            </div>
+
+            <p>
+                Director General del Registro Estatal de <br>
+                Transporte Público. <br>
+                PRESENTE.
+            </p>
+
+            <p>
+                En cumplimiento a lo ordenado en la Gaceta de Gobierno con número de registro 0011021, Publicada el 28
+                de
+                julio de 2022,
+                donde se establece el ACUERDO DEL SECRETARIO DE MOVILIDAD POR EL QUE SE AUTORIZA POR TERMINO DETERMINADO
+                LA CULMINACIÓN DE LOS TRÁMITES DE OTORGAMIENTO DE CONCESIONES, AUTORIZACIONES DE BASE, TERMINALES,
+                DERROTEROS, LANZADERAS, ALARGAMIENTOS Y MODIFICACIONES DE DERROTEROS QUE SE HAYAN INICIADO Y NO
+                CONCLUIDO, ASIMISMO RESPECTO A LAS CONCESIONES VENCIDAS QUE NO FUERON PRORROGADAS EN TIEMPO Y FORMA,
+                y en atención a la solicitud realizada por el ciudadano <b><u><span class="field"
+                            id="ing-titular-1"></span></u></b>
+                , quien solicitó Vo. Bo. a la Coordinación de Informática de la
+                Secretaría de Movilidad, respecto al equipamiento requerido en la Gaceta en comento, instalado por
+                el proveedor de sistemas de seguridad, así como respecto a los elementos de identificación requeridos en
+                la
+                misma,
+                me permito informar los datos de la unidad:
+            </p>
+            <table class="table table-bordered text-center" style="width: 600px; margin: 0 auto;">
+                <tr>
+                    <td>Número de Concesión:</td>
+                    <td><span class="field" id="ing-concesion"></span></td>
+                </tr>
+                <tr>
+                    <td>Nombre del Titular:</td>
+                    <td><span class="field" id="ing-titular-2"></span></td>
+                </tr>
+                <tr>
+                    <td>Municipio de Operación:</td>
+                    <td><span class="field" id="ing-municipio"></span></td>
+                </tr>
+                <tr>
+                    <td>Vehículo-Marca-Submarca</td>
+                    <td><span class="field" id="ing-marca"></span>, <span class="field" id="ing-submarca"></span></td>
+                </tr>
+                <tr>
+                    <td>Modelo (Año)</td>
+                    <td><span class="field" id="ing-modelo"></span></td>
+                </tr>
+                <tr>
+                    <td>Serie:</td>
+                    <td><span class="field" id="ing-serie"></span></td>
+                </tr>
+            </table>
+            <p>
+                Cabe destacar que el suscrito (a) <b><u><span class="field" id="ing-titular-4"></span></u></b></span>,
+                inició el procedimiento de obtención
+                de Vo. Bo. establecido en la Gaceta de Gobierno publicada el 20 de marzo de 2018.
+            </p>
+
+            <p>
+                En mérito de lo anterior, me permito solicitar a su apreciable persona tenga a bien postergar el
+                convenio
+                señalado
+                al inicio del presente escrito, por un periodo no mayor a 6 meses, manifestando bajo protesta de decir
+                verdad.
+            </p>
+
+            <p>
+                Así mismo, acepto de forma total, que la consecuencia jurídica del incumplimiento de la presente
+                solicitud
+                de forma unilateral de quien suscribe conlleva la consecuencia jurídica de la anulación del trámite
+                solicitado
+                sin reservarme derecho o acción.
+            </p>
+            <div class="text-center">
+                <p class="signature">
+                    Atentamente <br><br><br>
+                    _______________________________________ <br>
+                    <b><span class="field" id="ing-titular-3"></span></b> <br>
+                    <br><br>
+                </p>
+            </div>
+        </div>
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./app.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,72 @@
+body {
+    background-color: #f8f9fa;
+}
+
+.navbar {
+    background-color: #343a40;
+}
+
+.navbar-brand,
+.nav-link {
+    color: white !important;
+}
+
+.nav-link:hover {
+    color: #0d6efd !important;
+}
+
+.card {
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: scale(1.02);
+}
+
+/* PERSON CARD */
+.person-card {
+    height: 250px;
+    color: white;
+    background-size: cover;
+    background-position: center;
+    border-radius: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.8);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* HOVER EFFECT */
+.person-card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* BOTÓN INTERNO */
+.person-overlay {
+    background-color: rgba(0, 0, 0, 0.4);
+    color: white;
+    border: none;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    width: 100%;
+    text-align: center;
+    cursor: pointer;
+    height: 100%;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.person-overlay:hover {
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.person-overlay:active {
+    background-color: aliceblue;
+    color: black;
+    opacity: 0.5;
+}
+.nav-link {
+    cursor: pointer;
+}
