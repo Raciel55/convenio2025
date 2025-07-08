@@ -43,7 +43,7 @@ if (firmaInput && firmaDigital) {
             };
             reader.readAsDataURL(file);
         } else {
-            firmaDigital.src = '#';
+            firmaDigital.src = './img/white.jpg';
             firmaDigital.style.display = 'none';
         }
     });
@@ -75,10 +75,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
                 let nombreCompleto = `${nombres} ${apellidoP} ${apellidoM}`.trim();
 
-                ingtitular1.innerHTML = nombreCompleto;
-                ingtitular2.innerHTML = nombreCompleto
-                ingtitular3.innerHTML = nombreCompleto;
-                ingtitular4.innerHTML = nombreCompleto;
+                ingtitular1.innerHTML = (nombreCompleto).toUpperCase();
+                ingtitular2.innerHTML = (nombreCompleto).toUpperCase();
+                ingtitular3.innerHTML = (nombreCompleto).toUpperCase();
+                ingtitular4.innerHTML = (nombreCompleto).toUpperCase();
+
 
                 convenio();
             });
@@ -217,11 +218,11 @@ function convenio() {
     const ingmodelo = document.getElementById('ing-modelo');
     const ingfecha = document.getElementById('ing-fecha');
 
-    const concesion = document.getElementById('concesion').value;
-    const municipio = document.getElementById('municipio').value;
-    const serie = document.getElementById('serie').value;
-    const marca = document.getElementById('marcaAuto').value;
-    const submarca = document.getElementById('submarcaTaxi').value;
+    const concesion = (document.getElementById('concesion').value).toUpperCase();
+    const municipio = (document.getElementById('municipio').value).toUpperCase();
+    const serie = (document.getElementById('serie').value).toUpperCase();
+    const marca = (document.getElementById('marcaAuto').value).toUpperCase();
+    const submarca = (document.getElementById('submarcaTaxi').value).toUpperCase();
 
     //Fecha actual
     const fechaActual = new Date();
@@ -236,12 +237,12 @@ function convenio() {
             const anio = result.ModelYear || "Desconocido";
 
             // Asignar valores
-            ingconcesion.textContent = concesion;
-            ingmunicipio.textContent = municipio;
-            ingserie.textContent = serie;
-            ingmarca.textContent = marca;
-            ingsubmarca.textContent = submarca;
-            ingmodelo.textContent = anio;
+            ingconcesion.textContent = (concesion).toUpperCase();
+            ingmunicipio.textContent = (municipio).toUpperCase();
+            ingserie.textContent = (serie).toUpperCase();
+            ingmarca.textContent = (marca).toUpperCase();
+            ingsubmarca.textContent = (submarca).toUpperCase();
+            ingmodelo.textContent = (anio).toUpperCase();
             ingfecha.textContent = hoy;
 
             console.log("Año:", anio);
