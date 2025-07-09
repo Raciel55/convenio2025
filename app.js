@@ -229,40 +229,27 @@ function convenio() {
     const opcionesFecha = { year: 'numeric', month: 'long', day: 'numeric' };
     const hoy = fechaActual.toLocaleDateString('es-MX', opcionesFecha)
 
-    // Consultar modelo del coche usando el VIN
-    fetch(`https://vpic.nhtsa.dot.gov/api/vehicles/decodevinvalues/${serie}?format=json`)
-        .then(response => response.json())
-        .then(data => {
-            const result = data.Results[0];
-            const anio = result.ModelYear || "Desconocido";
 
-            // Asignar valores
-            ingconcesion.textContent = (concesion).toUpperCase();
-            ingmunicipio.textContent = (municipio).toUpperCase();
-            ingserie.textContent = (serie).toUpperCase();
-            ingmarca.textContent = (marca).toUpperCase();
-            ingsubmarca.textContent = (submarca).toUpperCase();
-            ingmodelo.textContent = (anio).toUpperCase();
-            ingfecha.textContent = hoy;
+    // Asignar valores
+    ingconcesion.textContent = (concesion).toUpperCase();
+    ingmunicipio.textContent = (municipio).toUpperCase();
+    ingserie.textContent = (serie).toUpperCase();
+    ingmarca.textContent = (marca).toUpperCase();
+    ingsubmarca.textContent = (submarca).toUpperCase();
+    ingmodelo.textContent = obtenerModelo(serie.charAt(9))
+    ingfecha.textContent = hoy;
 
-            console.log("Año:", anio);
+    document.getElementById('imprimir').addEventListener('click', function () {
+        ocultarSecciones();
+        document.getElementById('sec-navegacion').style.display = 'none';
+        document.getElementById('sec-imprimir').style.display = 'none';
+        document.getElementById('sec-convenio').style.display = 'block';
 
-            document.getElementById('imprimir').addEventListener('click', function () {
-                ocultarSecciones();
-                document.getElementById('sec-navegacion').style.display = 'none';
-                document.getElementById('sec-imprimir').style.display = 'none';
-                document.getElementById('sec-convenio').style.display = 'block';
-
-                // Esperar a que todo se pinte antes de imprimir
-                setTimeout(() => {
-                    window.print();
-                }, 300);
-            });
-        })
-        .catch(error => {
-            console.error("Error al consultar el VIN:", error);
-            document.getElementById("resultadoVIN").textContent = "Hubo un error al consultar el VIN.";
-        });
+        // Esperar a que todo se pinte antes de imprimir
+        setTimeout(() => {
+            window.print();
+        }, 300);
+    });
 }
 window.onafterprint = function () {
     console.log("Impresión finalizada");
@@ -271,3 +258,73 @@ window.onafterprint = function () {
     document.getElementById('sec-imprimir').style.display = 'block';
     document.getElementById('sec-convenio').style.display = 'block'; // opcional
 };
+function obtenerModelo(mod) {
+    var modelos = ['2000', '2001', '2002', '2003', '2004', '2005', '2007', '2007', '2008', '2009', '2010', '2011', '2012', '2013', '2014', '2015', '2016', '2017', '2018', '2019', '2020', '2021', '2022', '2023', '2024', '2025','2026'];
+
+    var index;
+
+    switch (mod) {
+        case 'Y':
+            index = 0; // 2000
+            break;
+        case 'A':
+            index = 10; // 2010
+            break;
+        case 'B':
+            index = 11; // 2011
+            break;
+        case 'C':
+            index = 12; // 2012
+            break;
+        case 'D':
+            index = 13; // 2013
+            break;
+        case 'E':
+            index = 14; // 2014
+            break;
+        case 'F':
+            index = 15; // 2015
+            break;
+        case 'G':
+            index = 16; // 2016
+            break;
+        case 'H':
+            index = 17; // 2017
+            break;
+        case 'J':
+            index = 18; // 2018
+            break;
+        case 'K':
+            index = 19; // 2019
+            break;
+        case 'L':
+            index = 20; // 2020
+            break;
+        case 'M':
+            index = 21; // 2021
+            break;
+        case 'N':
+            index = 22; // 2022
+            break;
+        case 'P':
+            index = 23; // 2023
+            break;
+        case 'R':
+            index = 24; // 2024
+            break;
+        case 'S':
+            index = 25; // 2025
+            break;
+        case 'T':
+            index = 26; // 2026
+        default:
+            if (mod >= 1 && mod <= 9) {
+                index = mod; // 2001 a 2009
+            } else {
+                return 'Modificación inválida'; // Manejar valores inválidos
+            }
+            break;
+    }
+
+    return modelos[index];
+}
