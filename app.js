@@ -25,7 +25,8 @@ const empresas = [
     { id: "administradora", representante: "JORGE MOLINA MATRINTEZ", nombre: "ADMINISTRADORA DE TRANSPORTE INDEPENDIENTE, S.A. DE C.V." },
     { id: "basurto", representante: "JAVIER GUADALUPE BASURTO MONTOYA", nombre: "A.C.P.T.A. RUTA 27 II MIGUEL HIDALGO, S.A. DE C.V." },
     { id: "ray", representante: "RAYMUNDO DAVID BENITEZ CRUZ", nombre: "TRANSPORTES EN NEZAHUALCOYOTL PERLA-REFORMA, S.A. DE C.V." },
-    { id: "elba", representante: "MANUEL RICARDO RODRIGUEZ MORALES", nombre: "TRANSPORTES DE ALQUILER DE MEXICO Y ANEXOS DE CUAUTITLAN, S.A. DE C.V." }
+    { id: "elba", representante: "MANUEL RICARDO RODRIGUEZ MORALES", nombre: "TRANSPORTES DE ALQUILER DE MEXICO Y ANEXOS DE CUAUTITLAN, S.A. DE C.V." },
+    { id: "aguilas", representante: "EDUARDO TORRES AVILA", nombre: "AGUILAS UNIDAS DEL VALLE DE NAUCALPAN Y RAMALES, S.A. DE C.V." }
 ];
 
 // ✅ Registrar una sola vez el evento de carga de firma
@@ -259,7 +260,7 @@ window.onafterprint = function () {
     document.getElementById('sec-convenio').style.display = 'block'; // opcional
 };
 function obtenerModelo(mod) {
-    var modelos = ['2000', '2001', '2002', '2003', '2004', '2005', '2007', '2007', '2008', '2009', '2010', '2011', '2012', '2013', '2014', '2015', '2016', '2017', '2018', '2019', '2020', '2021', '2022', '2023', '2024', '2025','2026'];
+    var modelos = ['2000', '2001', '2002', '2003', '2004', '2005', '2007', '2007', '2008', '2009', '2010', '2011', '2012', '2013', '2014', '2015', '2016', '2017', '2018', '2019', '2020', '2021', '2022', '2023', '2024', '2025', '2026'];
 
     var index;
 
