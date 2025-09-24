@@ -26,7 +26,9 @@ const empresas = [
     { id: "basurto", representante: "JAVIER GUADALUPE BASURTO MONTOYA", nombre: "A.C.P.T.A. RUTA 27 II MIGUEL HIDALGO, S.A. DE C.V." },
     { id: "ray", representante: "RAYMUNDO DAVID BENITEZ CRUZ", nombre: "TRANSPORTES EN NEZAHUALCOYOTL PERLA-REFORMA, S.A. DE C.V." },
     { id: "elba", representante: "MANUEL RICARDO RODRIGUEZ MORALES", nombre: "TRANSPORTES DE ALQUILER DE MEXICO Y ANEXOS DE CUAUTITLAN, S.A. DE C.V." },
-    { id: "aguilas", representante: "EDUARDO TORRES AVILA", nombre: "AGUILAS UNIDAS DEL VALLE DE NAUCALPAN Y RAMALES, S.A. DE C.V." }
+    { id: "aguilas", representante: "EDUARDO TORRES AVILA", nombre: "AGUILAS UNIDAS DEL VALLE DE NAUCALPAN Y RAMALES, S.A. DE C.V." },
+    { id: "coyote", representante: "HONORIO GRANADA FLORES", nombre: "SITIO DE TAXIS EL COYOTE, S.A. DE C.V." }
+
 ];
 
 // ✅ Registrar una sola vez el evento de carga de firma
