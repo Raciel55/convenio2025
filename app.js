@@ -27,7 +27,8 @@ const empresas = [
     { id: "ray", representante: "RAYMUNDO DAVID BENITEZ CRUZ", nombre: "TRANSPORTES EN NEZAHUALCOYOTL PERLA-REFORMA, S.A. DE C.V." },
     { id: "elba", representante: "MANUEL RICARDO RODRIGUEZ MORALES", nombre: "TRANSPORTES DE ALQUILER DE MEXICO Y ANEXOS DE CUAUTITLAN, S.A. DE C.V." },
     { id: "aguilas", representante: "EDUARDO TORRES AVILA", nombre: "AGUILAS UNIDAS DEL VALLE DE NAUCALPAN Y RAMALES, S.A. DE C.V." },
-    { id: "coyote", representante: "HONORIO GRANADA FLORES", nombre: "SITIO DE TAXIS EL COYOTE, S.A. DE C.V." }
+    { id: "coyote", representante: "HONORIO GRANADA FLORES", nombre: "SITIO DE TAXIS EL COYOTE, S.A. DE C.V." },
+    { id: "rio-hondo", representante: "ALFREDO GARCIA SIERRA", nombre: "TRANSPORTISTAS UNIDOS DE RÍO HONDO Y RAMALES RUTA 82, S.A. DE C.V." }
 
 ];
 
