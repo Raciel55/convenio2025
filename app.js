@@ -29,7 +29,8 @@ const empresas = [
     { id: "aguilas", representante: "EDUARDO TORRES AVILA", nombre: "AGUILAS UNIDAS DEL VALLE DE NAUCALPAN Y RAMALES, S.A. DE C.V." },
     { id: "coyote", representante: "HONORIO GRANADA FLORES", nombre: "SITIO DE TAXIS EL COYOTE, S.A. DE C.V." },
     { id: "rio-hondo", representante: "ALFREDO GARCIA SIERRA", nombre: "TRANSPORTISTAS UNIDOS DE RÍO HONDO Y RAMALES RUTA 82, S.A. DE C.V." },
-    { id: "palo-solo", representante: "VICTOR GARDUÑO RIVERA", nombre: "ASOCIACION DE PROPIETARIOS Y AUTOTRANSPORTISTAS DE PALO SOLO Y RAMALES RUTA 18, S.A. DE C.V." }
+    { id: "palo-solo", representante: "VICTOR GARDUÑO RIVERA", nombre: "ASOCIACION DE PROPIETARIOS Y AUTOTRANSPORTISTAS DE PALO SOLO Y RAMALES RUTA 18, S.A. DE C.V." },
+    { id: "especializados", representante: "ABRAHAM GREGORIO TREJO", nombre: "SISTEMAS ESPECIALIZADOS EN TRANSPORTE DE MEXICO, S.A. DE C.V." },
 
 ];
 
