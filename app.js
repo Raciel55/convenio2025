@@ -246,21 +246,10 @@ function convenio() {
     ingfecha.textContent = hoy;
 
     document.getElementById('imprimir').addEventListener('click', function () {
-        const element = document.getElementById('sec-con')
-        const opt = {
-        margin:       10,              // mm
-        filename:     'exported-section.pdf',
-        image:        { type: 'jpeg', quality: 0.98 },
-        html2canvas:  {
-          scale: 2,                   // higher -> better quality (but larger)
-          useCORS: true,              // allow cross-origin images if correctly configured
-          scrollY: -window.scrollY    // avoid cropping issues
-        },
-        jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' }
-      };
-
-      // html2pdf returns a Promise
-      html2pdf().set(opt).from(element).save();
+        document.getElementById('sec-navegacion').style.display = 'none';
+        document.getElementById('sec-imprimir').style.display = 'none';
+        document.getElementById('sec-convenio').style.display = 'block';
+        window.print();
     });
 }
 window.onafterprint = function () {
