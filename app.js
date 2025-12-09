@@ -32,6 +32,7 @@ const empresas = [
     { id: "palo-solo", representante: "VICTOR GARDUÑO RIVERA", nombre: "ASOCIACION DE PROPIETARIOS Y AUTOTRANSPORTISTAS DE PALO SOLO Y RAMALES RUTA 18, S.A. DE C.V." },
     { id: "especializados", representante: "ABRAHAM GREGORIO TREJO", nombre: "SISTEMAS ESPECIALIZADOS EN TRANSPORTE DE MEXICO, S.A. DE C.V." },
     { id: "tepe", representante: "HERIBERTO MARTINEZ RIVAS", nombre: "SITIO SAN MARTIN TEPETLIXPAN, S.A. DE C.V." },
+    { id: "caballero porfirio", representante: "EMILIO MUÑOZ GARCIA", nombre: "UNION DE TAXIS MUNICIPAL DE TEMASCALAPA, S.A. DE C.V." },
 
 ];
 
