@@ -34,6 +34,7 @@ const empresas = [
     { id: "tepe", representante: "HERIBERTO MARTINEZ RIVAS", nombre: "SITIO SAN MARTIN TEPETLIXPAN, S.A. DE C.V." },
     { id: "caballero porfirio", representante: "EMILIO MUÑOZ GARCIA", nombre: "UNION DE TAXIS MUNICIPAL DE TEMASCALAPA, S.A. DE C.V." },
     { id: "lamberto", representante: "JOSE LAMBERTO DE JESUS PEREZ RODRIGUEZ", nombre: "AUTOTRANSPORTES INTEGRALES DEL ESTADO DE MEXICO, S.A. DE C.V." },
+    { id: "rancheria", representante: "MARTIN CERON FLORES", nombre: "UNION DE TAXISTAS RANCHERIA DE BUENA VISTA MUNICIPIO DE ZUMPANGO, S.A. DE C.V." },
 
 ];
 
