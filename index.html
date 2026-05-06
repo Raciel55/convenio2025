@@ -7,6 +7,7 @@
     <title>Convenio</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="css.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -72,23 +73,39 @@
             <br><br>
         </div>
     </section>
-    <section id="sec-fisica" style="display: none;">
-        <h1>Ingresa el nombre de titular</h1>
-        <div class="form-group">
-            <label for="nombres">Nombres</label>
-            <input type="text" class="form-control" id="nombres" placeholder="Ingresa el nombre del titular">
+    <section id="sec-fisica" class="container py-4" style="display: none; max-width: 600px;">
+
+        <div class="card shadow-sm border-0">
+            <div class="card-body">
+
+                <h4 class="text-center mb-4 fw-bold">Datos del titular</h4>
+
+                <div class="mb-3">
+                    <label for="nombres" class="form-label">Nombres</label>
+                    <input type="text" class="form-control" id="nombres" placeholder="Ingresa el nombre del titular">
+                </div>
+
+                <div class="mb-3">
+                    <label for="apellido-paterno" class="form-label">Apellido Paterno</label>
+                    <input type="text" class="form-control" id="apellido-paterno"
+                        placeholder="Ingresa el apellido paterno">
+                </div>
+
+                <div class="mb-3">
+                    <label for="apellido-materno" class="form-label">Apellido Materno</label>
+                    <input type="text" class="form-control" id="apellido-materno"
+                        placeholder="Ingresa el apellido materno">
+                </div>
+
+                <div class="d-grid mt-4">
+                    <button class="btn btn-primary" id="sig-fis">
+                        Siguiente
+                    </button>
+                </div>
+
+            </div>
         </div>
-        <div class="form-group">
-            <label for="apellido-paterno">Apellido Paterno</label>
-            <input type="text" class="form-control" id="apellido-paterno"
-                placeholder="Ingresa el apellido paterno del titular">
-        </div>
-        <div class="form-group">
-            <label for="apellido-materno">Apellido Materno</label>
-            <input type="text" class="form-control" id="apellido-materno"
-                placeholder="Ingresa el apellido materno del titular">
-        </div>
-        <button class="btn btn-primary" id="sig-fis">Siguiente</button>
+
     </section>
     <section id="sec-moral" style="display: none;">
         <div class="container">
@@ -110,38 +127,20 @@
         <div id="resultadoVIN"></div>
         <div class="container mt-5 mb-5">
             <form>
+
+                <div class="form-group">
+                    <label for="dia">Dia</label>
+                    <input type="text" class="form-control" id="dia" placeholder="Ingresa el dia">
+                </div>
+                <div class="form-group">
+                    <label for="mes">Mes</label>
+                    <input type="text" class="form-control" id="mes" placeholder="Ingresa el mes">
+                </div>
                 <div class="form-group">
                     <label for="concesion">Número de Concesión</label>
                     <input type="text" class="form-control" id="concesion" placeholder="Ingresa la concesión">
                 </div>
-                <label for="municipio" class="form-label">Municipio</label>
-                <input class="form-control" list="municipiosEdomex" id="municipio" name="municipio"
-                    placeholder="Escribe o selecciona un municipio">
-                <datalist id="municipiosEdomex">
-                    <option value="ECATEPEC DE MORELOS">ECATEPEC DE MORELOS</option>
-                    <option value="NEZAHUALCÓYOTL">NEZAHUALCÓYOTL</option>
-                    <option value="NAUCALPAN DE JUÁREZ">NAUCALPAN DE JUÁREZ</option>
-                    <option value="TOLUCA">TOLUCA</option>
-                    <option value="TLALNEPANTLA DE BAZ">TLALNEPANTLA DE BAZ</option>
-                    <option value="CHIMALHUACÁN">CHIMALHUACÁN</option>
-                    <option value="IXTAPALUCA">IXTAPALUCA</option>
-                    <option value="ATIZAPÁN DE ZARAGOZA">ATIZAPÁN DE ZARAGOZA</option>
-                    <option value="CUAUTITLÁN IZCALLI">CUAUTITLÁN IZCALLI</option>
-                    <option value="VALLE DE CHALCO SOLIDARIDAD">VALLE DE CHALCO SOLIDARIDAD</option>
-                    <option value="TECÁMAC">TECÁMAC</option>
-                    <option value="TEXCOCO">TEXCOCO</option>
-                    <option value="COACALCO DE BERRIOZÁBAL">COACALCO DE BERRIOZÁBAL</option>
-                    <option value="LA PAZ">LA PAZ</option>
-                    <option value="ZUMPANGO">ZUMPANGO</option>
-                    <option value="HUEHUETOCA">HUEHUETOCA</option>
-                    <option value="TULTEPEC">TULTEPEC</option>
-                    <option value="HUIXQUILUCAN">HUIXQUILUCAN</option>
-                    <option value="CHALCO">CHALCO</option>
-                    <option value="CUAUTITLÁN">CUAUTITLÁN</option>
-                    <option value="HUEYPOXTLA">HUEYPOXTLA</option>
-                    <option value="HUEYPOXTLA">PACO PUTO MARICON-FLEIS</option>
 
-                </datalist>
                 <div class="form-group">
                     <label for="serie">Serie</label>
                     <input type="text" class="form-control" id="serie" placeholder="Ingresa la serie de vehiculo">
@@ -202,6 +201,23 @@
                     </datalist>
                     </datalist>
                 </div>
+                <div class="form-group">
+                    <label for="placas">Placas de Circulacion</label>
+                    <input type="text" class="form-control" id="placas" value="TRÁMITE">
+                </div>
+                <div class="form-group tramites">
+                    <label class="titulo">Tipo de trámite:</label>
+
+                    <div class="opcion">
+                        <input type="checkbox" class="tramite" id="prorroga" value="TRÁMITE">
+                        <label for="prorroga">Prórroga</label>
+                    </div>
+
+                    <div class="opcion">
+                        <input type="checkbox" class="tramite" id="sustitucion" value="TRÁMITE">
+                        <label for="sustitucion">Sustitución</label>
+                    </div>
+                </div>
                 <div class="mb-3">
                     <label for="firmaInput" class="form-label">¿Firma Digital?</label>
                     <input class="form-control" type="file" id="firmaInput" accept="image/*">
@@ -221,101 +237,149 @@
                 </button>
             </div>
         </section>
-        <div class="container" id="sec-con" style="width: 650px; text-align: justify; font-size: 13px;">
-            <br>
-            <br>
-            <p class="center" style="text-align: right;">Tlalnepantla de Baz, Estado de México, a <span
-                    id="ing-fecha"></span>.</p>
+        <div class="container" style="width: 6.5in; text-align: justify; font-size: 10pt; text-justify: inter-word;">
 
-            <div class="text-right" style="text-align: right;">
-                <h4 class="h4">Prórroga de Vo. Bo</h2>
-            </div>
-
-            <p>
-                Director General del Registro Estatal de <br>
-                Transporte Público. <br>
-                PRESENTE.
-            </p>
-
-            <p>
-                En cumplimiento a lo ordenado en la Gaceta de Gobierno con número de registro 0011021, Publicada el 28
-                de
-                julio de 2022,
-                donde se establece el ACUERDO DEL SECRETARIO DE MOVILIDAD POR EL QUE SE AUTORIZA POR TERMINO DETERMINADO
-                LA CULMINACIÓN DE LOS TRÁMITES DE OTORGAMIENTO DE CONCESIONES, AUTORIZACIONES DE BASE, TERMINALES,
-                DERROTEROS, LANZADERAS, ALARGAMIENTOS Y MODIFICACIONES DE DERROTEROS QUE SE HAYAN INICIADO Y NO
-                CONCLUIDO, ASIMISMO RESPECTO A LAS CONCESIONES VENCIDAS QUE NO FUERON PRORROGADAS EN TIEMPO Y FORMA,
-                y en atención a la solicitud realizada por el ciudadano <b><u><span class="field"
-                            id="ing-titular-1"></span></u></b>
-                , quien solicitó Vo. Bo. a la Coordinación de Informática de la
-                Secretaría de Movilidad, respecto al equipamiento requerido en la Gaceta en comento, instalado por
-                el proveedor de sistemas de seguridad, así como respecto a los elementos de identificación requeridos en
-                la
-                misma,
-                me permito informar los datos de la unidad:
-            </p>
-            <table class="table table-bordered text-center" style="width: 600px; margin: 0 auto;">
-                <tr>
-                    <td>Número de Concesión:</td>
-                    <td><span class="field" id="ing-concesion"></span></td>
-                </tr>
-                <tr>
-                    <td>Nombre del Titular:</td>
-                    <td><span class="field" id="ing-titular-2"></span></td>
-                </tr>
-                <tr>
-                    <td>Municipio de Operación:</td>
-                    <td><span class="field" id="ing-municipio"></span></td>
-                </tr>
-                <tr>
-                    <td>Vehículo-Marca-Submarca</td>
-                    <td><span class="field" id="ing-marca"></span>, <span class="field" id="ing-submarca"></span></td>
-                </tr>
-                <tr>
-                    <td>Modelo (Año)</td>
-                    <td><span class="field" id="ing-modelo"></span></td>
-                </tr>
-                <tr>
-                    <td>Serie:</td>
-                    <td><span class="field" id="ing-serie"></span></td>
-                </tr>
-            </table>
-            <p>
-                Cabe destacar que el suscrito (a) <b><u><span class="field" id="ing-titular-4"></span></u></b></span>,
-                inició el procedimiento de obtención
-                de Vo. Bo. establecido en la Gaceta de Gobierno publicada el 20 de marzo de 2018.
-            </p>
-
-            <p>
-                En mérito de lo anterior, me permito solicitar a su apreciable persona tenga a bien postergar el
-                convenio
-                señalado
-                al inicio del presente escrito, por un periodo no mayor a 6 meses, manifestando bajo protesta de decir
-                verdad.
-            </p>
-
-            <p>
-                Así mismo, acepto de forma total, que la consecuencia jurídica del incumplimiento de la presente
-                solicitud
-                de forma unilateral de quien suscribe conlleva la consecuencia jurídica de la anulación del trámite
-                solicitado
-                sin reservarme derecho o acción.
-            </p>
-            <div class="text-center">
-                <p class="signature">
-                    Atentamente <br>
-                <div class="mt-3 d-flex justify-content-center">
-                    <img id="firmaDigital" src="" alt="Firma Digital"
-                        style="max-width: 300px; max-height: 100px; display: none;">
-                </div>
-                _______________________________________ <br>
-                <b><span class="field" id="ing-titular-3"></span></b> <br>
-                <br><br>
+            <br><br>
+            <div class="convenio" style="margin-left: 0.18in; margin-right: 0.18in;">
+                <!-- Fecha -->
+                <p style="text-align: right;">
+                    Tlalnepantla de Baz, Estado de México a
+                    <b><u><span class="value field" id="ing-fecha-dia">05</u></b></span> de
+                    <b><u><span class="value field" id="ing-fecha-mes">abril</u></b></span> del
+                    <b>dos mil veintiséis.</b>
                 </p>
+
+                <br>
+
+                <!-- Datos del solicitante -->
+                <p><b>&nbsp;&nbsp;&nbsp;&nbsp;I.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Datos de la persona
+                        solicitante.</b></p>
+
+                <p>
+                    <b>Nombre completo de la razón social:</b>
+                    <span class="value field" id="ing-razon-social"></span>
+                </p>
+
+                <p>
+                    Carácter con el que promueve:<br>
+                    (<span class="value field">X</span>) Apoderado legal <br>
+                    ( &nbsp; ) Administrador
+                </p>
+
+                <div class="line-field">
+                    <b><span class="label">Número de concesión:</span></b>
+                    <span class="value field" id="ing-concesion">CAS0287D8129182391</span>
+                </div>
+
+                <br>
+
+                <!-- Datos del vehículo -->
+                <p><b>&nbsp;&nbsp;&nbsp;&nbsp; II. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Datos del vehículo
+                        vinculado a la concesión.</b></p>
+                <div class="line-field">
+                    <b><span class="label">Marca:</span></b>
+                    <span class="value field" id="ing-marca">NISSAN</span>
+                </div>
+
+                <div class="line-field">
+                    <b><span class="label">Submarca:</span></b>
+                    <span class="value field" id="ing-submarca"></span>
+                </div>
+
+                <div class="line-field">
+                    <b><span class="label">Modelo:</span></b>
+                    <span class="value field" id="ing-modelo"></span>
+                </div>
+
+                <div class="line-field">
+                    <b><span class="label">Número de serie / NIV:</span></b>
+                    <span class="value field" id="ing-serie"></span>
+                </div>
+
+                <div class="line-field">
+                    <b><span class="label">Placas de circulación:</span></b>
+                    <span class="value field" id="ing-placas"></span>
+                </div>
+
+                <br>
+
+                <!-- Manifestaciones -->
+                <p><b>&nbsp;&nbsp;&nbsp;&nbsp; III. &nbsp;&nbsp;&nbsp;&nbsp;Manifestaciones.</b></p>
+
+                <p style="text-align: justify;">
+                    El que suscribe, por propio derecho y en representación de la persona moral titular de la concesión
+                    antes señalada,
+                    presento la siguiente carta compromiso para continuar con el trámite denominado <b><span
+                            class="field" id="ing-tramite">sustitución de vehículo
+                            con prórroga</span></b>
+                    por así convenir a los intereses de mi representado<b>, manifestando bajo protesta de decir
+                        verdad</b> lo
+                    siguiente.
+                    ----------------------
+                </p>
+
+
+
+                <p><b>PRIMERO.</b> La documentación proporcionada a través del Portal de Trámites y Servicios (PORTyS)
+                    del
+                    Registro Estatal de Transporte Público de la Secretaría de Movilidad es veraz, completa y auténtica.
+                    -----------------------------------------------------------------------------------------
+                </p>
+
+                <p><b>SEGUNDO.</b> Conozco y cumplo con los requisitos, condiciones y efectos administrativos aplicables
+                    al
+                    trámite de prórroga de la concesión referida, por lo dispuesto en el Periódico Oficial (Gaceta del
+                    Gobierno) Registro DGC No 001 1021 de fecha diecinueve de diciembre del dos mil diecinueve; donde
+                    se estipula los requisitos señalados en el “Índice del expediente de concesiones de transporte
+                    público,
+                    sus movimientos adicionales y autorizaciones” <b>esto de forma enunciativa más no limitativa.</b>
+                    -----------------------------------------------------------------
+                </p>
+
+                <p><b>TERCERO.</b> En el caso de existir inconsistencias, omisiones, irregularidades o falsedad en la
+                    información o documentación presentada, acepto que la autoridad competente podrá iniciar los
+                    procedimientos administrativos, penales y/o que resulten procedentes. ------------------------------
+                </p>
+
+                <p><b>CUARTO.</b>Me comprometo a realizar, dentro del plazo que me sea autorizado, las acciones o
+                    gestiones pendientes relacionadas con la concesión materia del trámite. ----------------------------
+                </p>
+
+                <p><b>QUINTO.</b> Me comprometo a efectuar la sustitución del vehículo vinculado a la concesión por una
+                    unidad que cumpla con la normatividad aplicable, en un plazo que no exceda al día 11 de enero del
+                    dos mil veintisiete, cumpliendo con los siguientes requisitos:
+                    <span class="field" id="fecha-limite"></span>
+                </p>
+                <div class="lista">
+                    <p><u><i><b>A) En su caso, sustitución del vehículo por uno que tenga vida útil conforme a la
+                                    normatividad vigente. </b></i></u></p>
+                    <p><u><i><b>B) Cumplir con la cromática y demás elementos de identificación de los vehículos, en
+                                    términos del artículo 7.26, fracción XIII, del Código Administrativo del Estado de
+                                    México, con base en la normatividad vigente.</b></i></u></p>
+                    <p><u><i><b>C) Cumplir con sistemas de videograbación, geolocalización y demás requisitos, en
+                                    términos del artículo 7.14, fracción I del Código Administrativo del Estado de
+                                    México, con base en la normatividad vigente.</b></i></u></p>
+                </div>
+
+                <p><b>SEXTO.</b> Acepto que la presentación de la carta compromiso no exime del cumplimiento de los
+                    requisitos legales, administrativos o técnicos exigibles conforme a la normatividad aplicable. La
+                    presente carta compromiso se suscribe para ser integrada al trámite de prórroga realizado a través
+                    del portal correspondiente, para los efectos administrativos y legales a que haya lugar.--- </p>
+
+                <br><br><br>
+
+                <!-- Firma -->
+                <div style="text-align: center;">
+                    <img src="" class="azulada" alt="" id="firmaDigital"
+                        style="width: 150px; height: 100px; margin: 0 auto; display: none;">
+                    ________________________
+                    <p><b>Nombre Completo y Firma</b></p>
+                    <b><span class="value field" id="ing-firma-nombre">JHON DOE</span></b>
+                </div>
             </div>
         </div>
     </section>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="./app.js"></script>

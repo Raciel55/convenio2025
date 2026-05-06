@@ -1,5 +1,8 @@
 body {
     background-color: #f8f9fa;
+    font-family: Tahoma, Arial, sans-serif;
+    font-size: 10pt;
+    line-height: 11pt;
 }
 
 .navbar {
@@ -67,6 +70,93 @@ body {
     color: black;
     opacity: 0.5;
 }
+
 .nav-link {
     cursor: pointer;
+}
+
+.line-field {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.line-field span.label {
+    white-space: nowrap;
+}
+
+.line-field span.value {
+    border-bottom: 1px solid black;
+    flex: 1;
+    margin-left: 8px;
+    min-height: 16px;
+}
+
+.dotted-line {
+    display: inline;
+    border-bottom: 1px dashed black;
+}
+
+.value.field {
+    font-family: patrick hand;
+    color: #0050C8;
+    font-size: large;
+}
+
+.lista {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 9pt;
+    margin-left: 0.58in;
+}
+
+.convenio {
+    position: relative;
+}
+
+.convenio::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: url('./img/colibri.png') no-repeat;
+    background-size: 30%;
+    opacity: 0.2;
+    z-index: -1;
+    background-position: center;
+}
+
+.tramites {
+    font-family: Arial, sans-serif;
+    margin: 10px 0;
+}
+
+.tramites .titulo {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.tramites .opcion {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 5px;
+}
+
+.tramites input[type="checkbox"] {
+    transform: scale(1.1);
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+}
+
+.tramites label {
+    cursor: pointer;
+}
+
+.tramites .opcion {
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 4px;
+}
+.azulada{
+    filter: grayscale(100%) sepia(100%) hue-rotate(190deg) saturate(400%);
 }

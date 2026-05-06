@@ -74,10 +74,7 @@ document.addEventListener('DOMContentLoaded', function () {
             document.getElementById('terminar').addEventListener('click', function (event) {
                 event.preventDefault();
 
-                const ingtitular1 = document.getElementById('ing-titular-1');
-                const ingtitular2 = document.getElementById('ing-titular-2');
-                const ingtitular3 = document.getElementById('ing-titular-3');
-                const ingtitular4 = document.getElementById('ing-titular-4');
+                const ingfirmaNombre = document.getElementById('ing-firma-nombre');
 
                 const nombres = document.getElementById('nombres').value;
                 const apellidoP = document.getElementById('apellido-paterno').value;
@@ -85,11 +82,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
                 let nombreCompleto = `${nombres} ${apellidoP} ${apellidoM}`.trim();
 
-                ingtitular1.innerHTML = (nombreCompleto).toUpperCase();
-                ingtitular2.innerHTML = (nombreCompleto).toUpperCase();
-                ingtitular3.innerHTML = (nombreCompleto).toUpperCase();
-                ingtitular4.innerHTML = (nombreCompleto).toUpperCase();
-
+                ingfirmaNombre.innerHTML = (nombreCompleto).toUpperCase();
 
                 convenio();
             });
@@ -199,16 +192,11 @@ function mostrarEmpresas() {
             nuevoBtn.addEventListener('click', function (event) {
                 event.preventDefault();
 
-                const ingtitular1 = document.getElementById('ing-titular-1');
-                const ingtitular2 = document.getElementById('ing-titular-2');
-                const ingtitular3 = document.getElementById('ing-titular-3');
-                const ingtitular4 = document.getElementById('ing-titular-4');
+                const IngfirmaNombre = document.getElementById('ing-firma-nombre');
+                const ingRazonSocial = document.getElementById('ing-razon-social');
 
-
-                ingtitular1.innerHTML = empresaSeleccionada.representante;
-                ingtitular2.innerHTML = empresaSeleccionada.nombre;
-                ingtitular3.innerHTML = empresaSeleccionada.representante;
-                ingtitular4.innerHTML = empresaSeleccionada.representante;
+                IngfirmaNombre.innerHTML = empresaSeleccionada.representante.toUpperCase();
+                ingRazonSocial.innerHTML = empresaSeleccionada.nombre.toUpperCase();
 
                 convenio();
 
@@ -220,34 +208,49 @@ function convenio() {
     document.getElementById('sec-datos').style.display = 'none';
     document.getElementById('sec-convenio').style.display = 'block';
 
+    const ingdia = document.getElementById('ing-fecha-dia');
+    const ingmes = document.getElementById('ing-fecha-mes');
     const ingconcesion = document.getElementById('ing-concesion');
-    const ingmunicipio = document.getElementById('ing-municipio');
     const ingserie = document.getElementById('ing-serie');
     const ingmarca = document.getElementById('ing-marca');
     const ingsubmarca = document.getElementById('ing-submarca');
     const ingmodelo = document.getElementById('ing-modelo');
-    const ingfecha = document.getElementById('ing-fecha');
+    const ingplacas = document.getElementById('ing-placas');
 
+    const prorroga = document.getElementById('prorroga').checked;
+    const sustitucion = document.getElementById('sustitucion').checked;
+
+    const tramite = document.getElementById('ing-tramite');
+
+    if (prorroga && sustitucion) {
+        tramite.textContent = "sustitución de vehículo con prórroga";
+    } else if (prorroga) {
+        tramite.textContent = "prórroga";
+    }
+    else if (sustitucion) {
+        tramite.textContent = "sustitución de vehículo";
+    } else {
+        tramite.textContent = "trámite no especificado";
+    }
+
+
+    const dia = (document.getElementById('dia').value).toUpperCase();
+    const mes = (document.getElementById('mes').value).toUpperCase();
     const concesion = (document.getElementById('concesion').value).toUpperCase();
-    const municipio = (document.getElementById('municipio').value).toUpperCase();
     const serie = (document.getElementById('serie').value).toUpperCase();
     const marca = (document.getElementById('marcaAuto').value).toUpperCase();
     const submarca = (document.getElementById('submarcaTaxi').value).toUpperCase();
-
-    //Fecha actual
-    const fechaActual = new Date();
-    const opcionesFecha = { year: 'numeric', month: 'long', day: 'numeric' };
-    const hoy = fechaActual.toLocaleDateString('es-MX', opcionesFecha)
-
+    const placas = (document.getElementById('placas').value).toUpperCase();
 
     // Asignar valores
+    ingdia.textContent = (dia).toUpperCase();
+    ingmes.textContent = (mes).toUpperCase();
     ingconcesion.textContent = (concesion).toUpperCase();
-    ingmunicipio.textContent = (municipio).toUpperCase();
     ingserie.textContent = (serie).toUpperCase();
     ingmarca.textContent = (marca).toUpperCase();
     ingsubmarca.textContent = (submarca).toUpperCase();
     ingmodelo.textContent = obtenerModelo(serie.charAt(9))
-    ingfecha.textContent = hoy;
+    ingplacas.textContent = (placas).toUpperCase();
 
     document.getElementById('imprimir').addEventListener('click', function () {
         document.getElementById('sec-navegacion').style.display = 'none';
